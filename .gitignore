@@ -1,4 +1,6 @@
 
+exported-config*.js
+
 # Created by https://www.toptal.com/developers/gitignore/api/vim,git,node,font,yarn,venv,adobe,linux,macos,emacs,xcode,vscode,django,python,dropbox,vagrant,eclipse,windows,virtuoso,virtualenv,powershell,sublimetext,jetbrains+all,xamarinstudio,xcodeinjection,microsoftoffice,jupyternotebooks,visualstudiocode,react,redis,ssh,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=vim,git,node,font,yarn,venv,adobe,linux,macos,emacs,xcode,vscode,django,python,dropbox,vagrant,eclipse,windows,virtuoso,virtualenv,powershell,sublimetext,jetbrains+all,xamarinstudio,xcodeinjection,microsoftoffice,jupyternotebooks,visualstudiocode,react,redis,ssh,dotenv
 
