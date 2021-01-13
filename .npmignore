@@ -1,0 +1,11 @@
+.babelrc
+.editorconfig
+.eslint*
+.idea
+.npmignore
+tsconfig.json
+coverage
+docs
+src
+test
+node_modules
