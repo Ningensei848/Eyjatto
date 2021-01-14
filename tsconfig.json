@@ -5,7 +5,8 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "outDir": "build",
+    "outDir": "dist",
+    "sourceMap": true,
     "lib": [
       "ESNext",
       "DOM"
