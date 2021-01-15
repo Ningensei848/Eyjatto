@@ -1,16 +1,36 @@
 {
-  "compilerOptions": {
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "lib": [
-      "ESNext",
-      "DOM"
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "strict": true,
+        "allowJs": true,
+        "checkJs": false,
+        "sourceMap": true,
+        "incremental": true,
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationMap": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "es6",
+        "target": "ESNext",
+        "jsx": "preserve",
+        "newLine": "lf",
+        "outDir": "dist",
+        "baseUrl": "./"
+    },
+    "include": [
+        "src/**/*",
+        "test/**/*"
     ],
-    "strict": true
-  }
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
 }
