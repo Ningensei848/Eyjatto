@@ -2,7 +2,8 @@
     "$schema": "https://json.schemastore.org/eslintrc",
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "./tsconfig.json",
+        // cf. https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md#i-get-errors-telling-me-the-file-must-be-included-in-at-least-one-of-the-projects-provided
+        "project": "./.config/tsconfig.eslint.json",
         "ecmaVersion": 2021,
         "ecmaFeatures": {
             "jsx": true

@@ -18,12 +18,22 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
         "module": "es6",
         "target": "ESNext",
         "jsx": "preserve",
         "newLine": "lf",
         "outDir": "dist",
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "paths": {
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@/*": [
+                "src/*"
+            ]
+        }
     },
     "include": [
         "src/**/*",

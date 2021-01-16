@@ -1,5 +1,6 @@
 {
     "json.maxItemsComputed": 10000,
+    "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.ignorePath": ".config/.prettierignore",
@@ -9,4 +10,7 @@
     "eslint.lintTask.options": "-c ./.config/.eslintrc.json --ignore-path ./.config/.eslintignore",
     "eslint.packageManager": "yarn",
     "eslint.alwaysShowStatus": true,
+    "eslint.options": {
+        "configFile": "./.config/.eslintrc.json"
+    }
 }
