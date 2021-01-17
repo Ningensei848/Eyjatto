@@ -22,6 +22,11 @@
         "resolveJsonModule": true,
         "module": "es6",
         "target": "ESNext",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "ESNext"
+        ],
         "jsx": "preserve",
         "newLine": "lf",
         "outDir": "dist",
