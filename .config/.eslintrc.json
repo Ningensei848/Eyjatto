@@ -10,11 +10,15 @@
         }
     },
     "env": {
-        "es6": true
+        "es6": true,
+        "browser": true, // Enables browser globals like window and document
+        "amd": true, // Enables require() and define() as global variables as per the amd spec.
+        "node": true // Enables Node.js global variables and Node.js scoping.
     },
     "plugins": [
         "@typescript-eslint",
-        "jest"
+        "jest",
+        "react"
     ],
     "extends": [
         "eslint:recommended",
@@ -35,21 +39,19 @@
         }
     },
     "globals": {
-        "process": true
+        "process": true,
+        "React": "writable"
     },
     "overrides": [],
     "root": true,
     "rules": {
-        "eslint-comments/no-unused-disable": "error",
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error",
+        "import/no-unresolved": "off",
         "react/prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "jsx-a11y/anchor-is-valid": "off",
+        "eslint-comments/no-unused-disable": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
         "@typescript-eslint/explicit-function-return-type": [
             "warn",
             {
