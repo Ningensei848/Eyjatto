@@ -1,21 +1,36 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { render as ReactDomRender } from 'react-dom'
 import { StrictMode } from 'react'
 import { Provider } from 'react-redux'
 
 import { store } from './libs/rtk'
 import EyjattoForm from './components/Eyjatto'
-import { EyjattoProps } from './types'
+import type { EyjattoProps } from './types'
 
 // export -----------------------------------------------------------------------------
 // cf. https://ja.javascript.info/import-export
-export { EyjattoForm }
-export * from './components/ConfigurableElement'
+export { default as EyjattoForm } from './components/Eyjatto'
 
-export * from './libs'
-export * from './types'
+export {
+    JSONResponseIsValid,
+    eyjattoConfigIsValid,
+    formElementIsValid,
+    sparqletIsValid,
+    isValidQuery,
+    isValidUrl,
+} from './libs/validator'
+export {
+    JSONResponseParse,
+    JSONResponseSerialize,
+    eyjattoConfigParse,
+    eyjattoConfigSerialize,
+    formElementParse,
+    formElementSerialize,
+    sparqletParse,
+    sparqletSerialize,
+} from './libs'
+
+export type { JSONResponse, EyjattoConfig, EyjattoProps, FormElement, Sparqlet } from './types'
+
 // ------------------------------------------------------------------------------------
 // 1) クラス初期化
 // 2) メソッドでRender

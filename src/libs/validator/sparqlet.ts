@@ -1,6 +1,6 @@
 import { ajv } from './util'
-import { sparqletSchema } from '../../schemas/sparqlet'
-import { Sparqlet } from '../../types'
+import { sparqletSchema } from '~/src/schemas/sparqlet'
+import type { Sparqlet } from '~/src/types'
 
 /*
  ** validate is a type guard for Sparqlet - type is inferred from sparqletSchema type

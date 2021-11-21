@@ -896,3 +896,12 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,ssh,git,node,venv,font,yarn,react,xcode,adobe,linux,macos,emacs,redis,python,dotenv,django,dropbox,windows,vagrant,eclipse,virtuoso,virtualenv,powershell,sublimetext,xamarinstudio,jetbrains+all,xcodeinjection,microsoftoffice,visualstudiocode,jupyternotebooks
+
+
+# ------------------------------------------------------------------------------------------------------
+src/
+.vscode/
+parcel-bundle-reports/
+.eslintrc.js*
+index.html
+# ------------------------------------------------------------------------------------------------------

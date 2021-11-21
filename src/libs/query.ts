@@ -1,10 +1,10 @@
 import axios from 'axios'
-
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
 
-import { JSONResponse } from '../types'
-import { isValidQuery, isValidUrl, JSONResponseIsValid } from './validator'
+import { isValidQuery, isValidUrl, JSONResponseIsValid } from '~/src/libs/validator'
+
+import type { JSONResponse } from '~/src/types'
 
 const delay = 500 // mili second
 const pattern_embedded = /{{[^=]+?==([^}]*)?}}/gi

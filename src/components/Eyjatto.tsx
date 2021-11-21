@@ -1,12 +1,10 @@
 // TODO: もろもろすべての細かな設定変更は，環境変数経由でやる
 import { useEffect, useState } from 'react'
-import { useAppDispatch } from '~/src/libs/rtk'
+import { useAppDispatch, useSPARQLet, useQueryExecute } from '~/src/libs'
 import { update } from '~/src/libs/rtk/slice'
 import { ConfigurableElement } from '~/src/components/ConfigurableElement'
-import { useSPARQLet } from '~/src/libs/fetch'
-import { useQueryExecute } from '~/src/libs/query'
 
-import { EyjattoProps, FormElement } from '~/src/types'
+import type { EyjattoProps, FormElement } from '~/src/types'
 
 const Eyjatto = (props: EyjattoProps): JSX.Element => {
     const { proxyURL } = props

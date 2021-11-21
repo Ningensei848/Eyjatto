@@ -1,5 +1,5 @@
-import { FormElement } from '../types'
-import { useQueryUpdate } from '../libs/query'
+import { FormElement } from '~/src/types'
+import { useQueryUpdate } from '~/src/libs'
 
 const pattern_textinput = /^input|^text(input)?/i
 const pattern_selector = /^select([oe]r)?/i

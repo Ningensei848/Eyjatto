@@ -1,9 +1,13 @@
 import axios from 'axios'
-
-import { EyjattoConfig, EyjattoProps } from '../types'
-import { eyjattoConfigIsValid, eyjattoConfigParse as parse } from '../libs/validator/config'
-import { sparqletIsValid } from '../libs/validator/sparqlet'
 import { useEffect, useState } from 'react'
+
+import {
+    eyjattoConfigIsValid,
+    eyjattoConfigParse as parse,
+    sparqletIsValid,
+} from '~/src/libs/validator'
+
+import type { EyjattoConfig, EyjattoProps } from '~/src/types'
 
 const defaultConfig: EyjattoConfig = {
     endpoint: '/api/sparql',

@@ -2,7 +2,8 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import resultReducer from './slice'
 
 // export -------------------------------------------------------------
-export { useAppDispatch, useAppSelector } from './hook'
+export * from './hook'
+export { update } from './slice'
 
 export const store = configureStore({
     reducer: {

@@ -1,6 +1,6 @@
 import { ajv } from './util'
-import { elementSchema } from '../../schemas/element'
-import { FormElement } from '../../types'
+import { elementSchema } from '~/src/schemas/element'
+import type { FormElement } from '~/src/types'
 
 /*
  ** validate is a type guard for FormElement - type is inferred from elementSchema type

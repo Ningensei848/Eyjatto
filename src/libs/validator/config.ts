@@ -1,6 +1,6 @@
 import { ajv } from './util'
-import { eyjattoConfigSchema } from '../../schemas/config'
-import { EyjattoConfig } from '../../types'
+import { eyjattoConfigSchema } from '~/src/schemas/config'
+import type { EyjattoConfig } from '~/src/types'
 
 /*
  ** validate is a type guard for EyjattoConfig - type is inferred from eyjattoConfigSchema type
