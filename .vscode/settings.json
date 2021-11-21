@@ -1,0 +1,34 @@
+{
+    // common settings
+    "json.maxItemsComputed": 10000,
+    "files.autoSave": "afterDelay",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "files.watcherExclude": {
+        "**/.parcel-cache/**": true,
+        "**/build/**": true,
+        "**/coverage/**": true
+    },
+    // editor
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    // eslint
+    "eslint.format.enable": false,
+    "eslint.lintTask.enable": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.lintTask.options": "-c ./.eslintrc.js",
+    "eslint.packageManager": "yarn",
+    "eslint.options": {
+        "overrideConfigFile": "./.eslintrc.js"
+    },
+}

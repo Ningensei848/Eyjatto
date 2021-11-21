@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "strict": true,
+        "allowJs": true,
+        "target": "ES2021",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "newLine": "lf",
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
+        "baseUrl": ".",
+        "paths": {
+            "~*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*",
+        "tests/**/*"
+    ]
+}

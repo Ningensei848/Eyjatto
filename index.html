@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module">
+            import { Eyjatto } from '/dist/main.js'
+
+            const config = {
+                query: `select * where { ?s ?p ?o . } LIMIT {{limit}}`,
+                config: {
+                    endpoint: 'https://data.e-stat.go.jp/lod/sparql/alldata/query',
+                    form: [
+                        {
+                            element: 'text',
+                            param: {
+                                name: 'limit',
+                            },
+                        },
+                    ],
+                },
+            }
+            const eyjatto = new Eyjatto({
+                eyjattoTarget: document.getElementById('root'),
+                eyjattoConfig: config,
+            })
+
+            eyjatto.render()
+        </script>
+    </body>
+</html>
