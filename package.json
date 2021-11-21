@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ningensei848/eyjatto",
-    "version": "0.0.1-epsilon",
+    "version": "0.0.1-theta",
     "license": "MIT",
     "author": "Ningensei848",
     "description": "Generates arbitrary form(s) from textInput with the call \\\"Eyjatto\\\". / 「えいやっ」と言いながらフォームを生成する．",
@@ -73,7 +73,7 @@
         ]
     },
     "prettier": {
-        "printWidth": 100,
+        "printWidth": 120,
         "tabWidth": 4,
         "semi": false,
         "singleQuote": true

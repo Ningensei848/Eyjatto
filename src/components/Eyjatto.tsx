@@ -29,12 +29,7 @@ const Eyjatto = (props: EyjattoProps): JSX.Element => {
     return (
         <form>
             {form.map((element: FormElement) => (
-                <ConfigurableElement
-                    key={element.param.name}
-                    config={element}
-                    query={query}
-                    setQuery={setQuery}
-                />
+                <ConfigurableElement key={element.param.name} config={element} query={query} setQuery={setQuery} />
             ))}
         </form>
     )

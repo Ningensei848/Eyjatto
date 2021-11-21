@@ -7,32 +7,19 @@ import EyjattoForm from './components/Eyjatto'
 
 import type { EyjattoProps } from './types'
 
-// export -----------------------------------------------------------------------------
+// export -------------------------------------------------------------------------------------------------------------
 // cf. https://ja.javascript.info/import-export
 export { default as EyjattoForm } from './components/Eyjatto'
 
-export {
-    JSONResponseIsValid,
-    eyjattoConfigIsValid,
-    formElementIsValid,
-    sparqletIsValid,
-    isValidQuery,
-    isValidUrl,
-} from './libs/validator'
-export {
-    JSONResponseParse,
-    JSONResponseSerialize,
-    eyjattoConfigParse,
-    eyjattoConfigSerialize,
-    formElementParse,
-    formElementSerialize,
-    sparqletParse,
-    sparqletSerialize,
-} from './libs'
+export { isValidUrl, isValidQuery } from './libs/validator/util'
+export { eyjattoConfigIsValid, eyjattoConfigParse, eyjattoConfigSerialize } from './libs/validator/config'
+export { formElementIsValid, formElementParse, formElementSerialize } from './libs/validator/element'
+export { sparqletIsValid, sparqletParse, sparqletSerialize } from './libs/validator/sparqlet'
+export { JSONResponseIsValid, JSONResponseParse, JSONResponseSerialize } from './libs/validator/sparql'
 
 export type { JSONResponse, EyjattoConfig, EyjattoProps, FormElement, Sparqlet } from './types'
 
-// ------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------
 // 1) クラス初期化
 // 2) メソッドでRender
 export interface RenderProps {

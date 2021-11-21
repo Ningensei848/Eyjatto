@@ -45,16 +45,12 @@ export const useSPARQLet = (
                     .get(sparqletURL)
                     .then((res) => {
                         if (!sparqletIsValid(res.data))
-                            throw new Error(
-                                'Invalid server response: Please check your set URL or server status.'
-                            )
+                            throw new Error('Invalid server response: Please check your set URL or server status.')
                         const json = res.data
                         const config = parse(json.pageProps.config)
 
                         if (!eyjattoConfigIsValid(config)) {
-                            throw new Error(
-                                'EyjattoConfig is not valid. Please check your sparqlet.'
-                            )
+                            throw new Error('EyjattoConfig is not valid. Please check your sparqlet.')
                         }
                         setConfig(config)
                         setQuery(json.pageProps.query)

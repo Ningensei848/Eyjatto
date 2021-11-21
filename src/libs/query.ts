@@ -31,16 +31,11 @@ export const useQueryExecute = (
     const params = new URLSearchParams({ endpoint, query })
     // TODO: specification of `default-graph-uri` and  `named-graph-uri`
     // cf. https://www.w3.org/TR/sparql11-protocol/#query-operation
-    const url = proxyURL
-        ? `${proxyURL}?${params.toString()}`
-        : `${endpoint}?query=${encodeURIComponent(query)}`
+    const url = proxyURL ? `${proxyURL}?${params.toString()}` : `${endpoint}?query=${encodeURIComponent(query)}`
 
     console.log(`useQueryExecute: url is ${url}`)
 
-    const { data, error } = useSWR<JSONResponse, Error>(
-        isValidQuery(query) && isValidUrl(url) ? url : null,
-        fetcher
-    )
+    const { data, error } = useSWR<JSONResponse, Error>(isValidQuery(query) && isValidUrl(url) ? url : null, fetcher)
 
     return {
         result: data,

@@ -17,8 +17,7 @@ export const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element =
     const { name, keywords } = param
 
     const attributes =
-        Object.prototype.hasOwnProperty.call(param, 'attributes') &&
-        typeof param.attributes !== 'undefined'
+        Object.prototype.hasOwnProperty.call(param, 'attributes') && typeof param.attributes !== 'undefined'
             ? param.attributes
             : {}
     // 埋め込むべき値を取得する <= from keywords

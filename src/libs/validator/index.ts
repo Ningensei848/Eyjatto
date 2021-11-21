@@ -1,5 +1,5 @@
 export { isValidUrl, isValidQuery } from './util'
-export { eyjattoConfigIsValid} from './config'
+export { eyjattoConfigIsValid } from './config'
 export { formElementIsValid } from './element'
 export { sparqletIsValid } from './sparqlet'
 export { JSONResponseIsValid } from './sparql'
