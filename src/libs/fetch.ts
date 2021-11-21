@@ -1,11 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-import {
-    eyjattoConfigIsValid,
-    eyjattoConfigParse as parse,
-    sparqletIsValid,
-} from '~/src/libs/validator'
+import { eyjattoConfigIsValid, sparqletIsValid } from '~/src/libs/validator'
+import { eyjattoConfigParse as parse } from '~/src/libs'
 
 import type { EyjattoConfig, EyjattoProps } from '~/src/types'
 

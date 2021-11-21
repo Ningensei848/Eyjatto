@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 
 import { store } from './libs/rtk'
 import EyjattoForm from './components/Eyjatto'
+
 import type { EyjattoProps } from './types'
 
 // export -----------------------------------------------------------------------------
