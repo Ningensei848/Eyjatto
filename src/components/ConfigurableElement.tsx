@@ -11,7 +11,7 @@ interface ConfigurableFormProps {
     setQuery: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element => {
+const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element => {
     const { query, setQuery } = props
     const { element, param } = props.config
     const { name, keywords } = param
@@ -77,3 +77,5 @@ export const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element =
         return <p>Unknown error happen</p>
     }
 }
+
+export default ConfigurableElement

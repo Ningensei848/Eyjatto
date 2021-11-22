@@ -26,7 +26,7 @@ export const useQueryExecute = (
     endpoint: string,
     varEmbeddedQuery: string,
     proxyURL: string | undefined
-): { result?: JSONResponse; isExec: boolean; isExecError?: Error } => {
+): { result?: JSONResponse; isLoading: boolean; isError?: Error } => {
     const query = varEmbeddedQuery.replace(pattern_embedded, '$1').trim()
     const params = new URLSearchParams({ endpoint, query })
     // TODO: specification of `default-graph-uri` and  `named-graph-uri`
@@ -39,8 +39,8 @@ export const useQueryExecute = (
 
     return {
         result: data,
-        isExec: !error && !data,
-        isExecError: error,
+        isLoading: !error && !data,
+        isError: error,
     }
 }
 

@@ -9,7 +9,8 @@ import type { EyjattoProps } from './types'
 
 // export -------------------------------------------------------------------------------------------------------------
 // cf. https://ja.javascript.info/import-export
-export { default as EyjattoForm } from './components/Eyjatto'
+export { default as EyjattoForm, useEyjatto } from './components/Eyjatto'
+export { default as EyjattoElement } from './components/ConfigurableElement'
 
 export { isValidUrl, isValidQuery } from './libs/validator/util'
 export { eyjattoConfigIsValid, eyjattoConfigParse, eyjattoConfigSerialize } from './libs/validator/config'

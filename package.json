@@ -1,10 +1,10 @@
 {
     "$schema": "https://json.schemastore.org/package",
     "name": "@ningensei848/eyjatto",
-    "version": "0.0.1-theta",
+    "version": "0.0.1-iota",
     "license": "MIT",
     "author": "Ningensei848",
-    "description": "Generates arbitrary form(s) from textInput with the call \\\"Eyjatto\\\". / 「えいやっ」と言いながらフォームを生成する．",
+    "description": "Generates arbitrary form(s) from textInput with the call \"Eyjatto\". / 「えいやっ」と言いながらフォームを生成する．",
     "repository": "https://github.com/Ningensei848/eyjatto",
     "publishConfig": {
         "access": "public"
