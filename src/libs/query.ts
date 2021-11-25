@@ -13,6 +13,7 @@ const axiosConfig = {
     headers: { Accept: 'application/sparql-results+json' },
 }
 
+// Todo: axios config を追加する: basepath
 const fetcher = (url: string): Promise<JSONResponse> =>
     axios.get(url, axiosConfig).then((res) => {
         if (!JSONResponseIsValid(res.data)) {
@@ -22,6 +23,7 @@ const fetcher = (url: string): Promise<JSONResponse> =>
         }
     })
 
+// TODO: fethcer に渡す処理 https://blog.nijohando.jp/post/axios-ignore-base-url/
 export const useQueryExecute = (
     endpoint: string,
     varEmbeddedQuery: string,
