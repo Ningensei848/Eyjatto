@@ -1,7 +1,7 @@
 {
     "$schema": "https://json.schemastore.org/package",
-    "name": "@ningensei848/eyjatto",
-    "version": "0.0.1-nu",
+    "name": "eyjatto",
+    "version": "0.0.3-gamma",
     "license": "MIT",
     "author": "Ningensei848",
     "description": "Generates arbitrary form(s) from textInput with the call \"Eyjatto\". / 「えいやっ」と言いながらフォームを生成する．",
@@ -15,8 +15,7 @@
     "types": "dist/types.d.ts",
     "scripts": {
         "dev": "parcel ./index.html -p 3000",
-        "build": "rm -rf ./dist/ && parcel build",
-        "build:prod": "yarn build --no-source-maps",
+        "build": "rm -rf ./dist/ && parcel build && echo '\n\nPLEASE CONFIRM `dist/types.d.ts` IMPORT UTILITY TYPES !!! \n\n  import { JTDDataType as } from 'ajv/dist/jtd' \n\n'",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx,.css,.md,.json -c .eslintrc.js 'src/**'",
         "format": "prettier './{src,test,script,public,config}/**/*.{js,jsx,ts,tsx,css,md,json,html}' --write",
         "check": "tsc --noEmit"
