@@ -15,8 +15,7 @@
     "types": "dist/types.d.ts",
     "scripts": {
         "dev": "parcel ./index.html -p 3000",
-        "build": "rm -rf ./dist/ && parcel build",
-        "build:prod": "yarn build --no-source-maps",
+        "build": "rm -rf ./dist/ && parcel build && echo '\n\nPLEASE CONFIRM `dist/types.d.ts` IMPORT UTILITY TYPES !!! \n\n  import { JTDDataType as } from 'ajv/dist/jtd' \n\n'",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx,.css,.md,.json -c .eslintrc.js 'src/**'",
         "format": "prettier './{src,test,script,public,config}/**/*.{js,jsx,ts,tsx,css,md,json,html}' --write",
         "check": "tsc --noEmit"
