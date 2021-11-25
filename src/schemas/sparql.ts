@@ -87,6 +87,7 @@ const Results = {
             },
         },
     },
+    additionalProperties: true,
 } as const
 
 /*
@@ -101,6 +102,7 @@ const Head = {
         vars: { elements: { type: 'string' } },
         link: { elements: { type: 'string' } },
     },
+    additionalProperties: true,
 } as const
 
 /*

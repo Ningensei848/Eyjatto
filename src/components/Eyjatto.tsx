@@ -5,6 +5,8 @@ import { update } from '~/src/libs/rtk/slice'
 import ConfigurableElement from '~/src/components/ConfigurableElement'
 
 import type { EyjattoProps, FormElement } from '~/src/types'
+import Paper from '@mui/material/Paper'
+import Divider from '@mui/material/Divider'
 
 export const useEyjatto = (props: EyjattoProps) => {
     const { proxyURL } = props
@@ -37,11 +39,17 @@ const Eyjatto = (props: EyjattoProps): JSX.Element => {
     }
 
     return (
-        <form>
-            {form.map((element: FormElement) => (
-                <ConfigurableElement key={element.param.name} config={element} query={query} setQuery={setQuery} />
+        <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
+            {form.map((element: FormElement, idx: number) => (
+                <>
+                    <ConfigurableElement key={element.param.name} config={element} query={query} setQuery={setQuery} />
+                    {/* 複数のフォームがある場合，それらの間に縦棒を置いて仕切る */}
+                    {idx + 1 !== form.length && (
+                        <Divider sx={{ height: '2rem', m: '0.25rem' }} orientation="vertical" />
+                    )}
+                </>
             ))}
-        </form>
+        </Paper>
     )
 }
 

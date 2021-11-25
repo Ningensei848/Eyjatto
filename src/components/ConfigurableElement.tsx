@@ -1,5 +1,12 @@
-import { FormElement } from '~/src/types'
+import InputBase from '@mui/material/InputBase'
+import InputAdornment from '@mui/material/InputAdornment'
+import SearchIcon from '@mui/icons-material/Search'
+import NativeSelect from '@mui/material/NativeSelect'
+import ListIcon from '@mui/icons-material/FormatListBulleted'
 import { useQueryUpdate } from '~/src/libs'
+import type { FormElement } from '~/src/types'
+import type { ReactNode } from 'react'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const pattern_textinput = /^input|^text(input)?/i
 const pattern_selector = /^select([oe]r)?/i
@@ -10,6 +17,58 @@ interface ConfigurableFormProps {
     config: FormElement
     setQuery: React.Dispatch<React.SetStateAction<string>>
 }
+
+const InputForm = (inputProps: {
+    value: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    [key: string]: unknown
+}) => (
+    <InputBase
+        sx={{ ml: 1, flex: 1 }}
+        inputProps={inputProps}
+        startAdornment={
+            <InputAdornment position="start">
+                <SearchIcon />
+            </InputAdornment>
+        }
+    />
+)
+
+const SelectForm = (props: {
+    children: ReactNode
+    value: string
+    onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+    [key: string]: unknown
+}) => {
+    const { value, onChange, children } = props
+    return (
+        <NativeSelect
+            value={value}
+            onChange={onChange}
+            input={
+                <InputBase
+                    sx={{ ml: 1, flex: 1 }}
+                    startAdornment={
+                        <InputAdornment position="start">
+                            <ListIcon />
+                        </InputAdornment>
+                    }
+                />
+            }
+        >
+            {children}
+        </NativeSelect>
+    )
+}
+
+const getOptions = (keywords: Array<string | number>): JSX.Element[] =>
+    keywords.map((k, idx) => {
+        return (
+            <option key={idx} value={k}>
+                {k}
+            </option>
+        )
+    })
 
 const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element => {
     const { query, setQuery } = props
@@ -34,22 +93,14 @@ const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element => {
             value,
             onChange: (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value),
         }
-        return <input {...inputProps} />
+        return <InputForm {...inputProps} />
     } else if (pattern_selector.test(element)) {
         const selectProps = {
             ...attributes,
             value,
             onChange: (e: React.ChangeEvent<HTMLSelectElement>) => setValue(e.target.value),
         }
-
-        const options = keywordList.map((k, idx) => {
-            return (
-                <option key={idx} value={k}>
-                    {k}
-                </option>
-            )
-        })
-        return <select {...selectProps}>{options}</select>
+        return <SelectForm {...selectProps}>{getOptions(keywordList)}</SelectForm>
     } else if (pattern_autocomplete.test(element)) {
         const connectionId = `autocomplete-${name}`
         const autoconmpleteProps = {
@@ -58,23 +109,17 @@ const ConfigurableElement = (props: ConfigurableFormProps): JSX.Element => {
             value,
             onChange: (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value),
         }
-        const options = keywordList.map((k, idx) => {
-            return (
-                <option key={idx} value={k}>
-                    {k}
-                </option>
-            )
-        })
+
         return (
             <>
-                <input {...autoconmpleteProps} />
-                <datalist id={connectionId}>{options}</datalist>
+                <InputForm {...autoconmpleteProps} />
+                <datalist id={connectionId}>{getOptions(keywordList)}</datalist>
             </>
         )
     } else {
         // warning
         console.error('Unknown element! errror occured...')
-        return <p>Unknown error happen</p>
+        return <CircularProgress />
     }
 }
 
