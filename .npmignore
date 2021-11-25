@@ -900,6 +900,7 @@ modules.xml
 # ------------------------------------------------------------------------------------------------------
 src/
 .vscode/
+tsconfig.json
 parcel-bundle-reports/
 .eslintrc.js*
 index.html
