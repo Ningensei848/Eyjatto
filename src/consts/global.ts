@@ -1,4 +1,4 @@
-export const siteName = process.env.SITE_NAME || 'SPARQList Next'
+export const siteName = process.env.SITE_NAME || 'Eyjatto'
 
 export const MOBILE_WIDTH = process.env.MOBILE_WIDTH || 600
 
