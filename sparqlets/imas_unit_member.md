@@ -2,7 +2,7 @@
 id: imas_unit_member
 title: 【im@sparql】アイドルの参加ユニット
 author: ばんじゅん 氏
-published: true
+published: false
 ---
 
 # 【im@sparql】アイドルの参加ユニット
