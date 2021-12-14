@@ -1,0 +1,65 @@
+{
+  "properties": {
+    "endpoint": {
+      "type": "string"
+    },
+    "form": {
+      "elements": {
+        "properties": {
+          "element": {
+            "type": "string"
+          },
+          "param": {
+            "discriminator": "from",
+            "mapping": {
+              "list": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "elements": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "optionalProperties": {
+                  "attributes": {
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "dict": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "values": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "optionalProperties": {
+                  "attributes": {
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

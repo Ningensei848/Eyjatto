@@ -1,0 +1,44 @@
+name: Deploy Next.js app
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+      #- name: Upgrade yarn v3
+      #  run: yarn set version berry
+
+      - name: Install dependencies
+        #run: yarn install --immutable
+        # run by yarn v1
+        run: yarn install
+
+      - name: Build Next.js app
+        run: yarn build
+        env:
+          BASE_PATH: SPARQListNext
+          NEXT_PUBLIC_PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
+          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
+          NEXT_PUBLIC_GOOGLE_ADSENSE_ID: ${{ secrets.GOOGLE_ADSENSE_ID }}
+
+      - name: Export Next.js app
+        run: yarn export
+
+      - name: Deploy Next.js app to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out

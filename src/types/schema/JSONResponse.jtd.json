@@ -1,0 +1,72 @@
+{
+  "definitions": {
+    "RDFTerm": {
+      "discriminator": "type",
+      "mapping": {
+        "uri": {
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        },
+        "literal": {
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          },
+          "optionalProperties": {
+            "xml:lang": {
+              "type": "string"
+            },
+            "datatype": {
+              "type": "string"
+            }
+          }
+        },
+        "bnode": {
+          "properties": {
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "head": {
+      "optionalProperties": {
+        "vars": {
+          "elements": {
+            "type": "string"
+          }
+        },
+        "link": {
+          "elements": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "optionalProperties": {
+    "boolean": {
+      "type": "boolean"
+    },
+    "results": {
+      "properties": {
+        "bindings": {
+          "elements": {
+            "values": {
+              "ref": "RDFTerm"
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

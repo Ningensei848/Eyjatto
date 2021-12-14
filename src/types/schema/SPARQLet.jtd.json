@@ -1,0 +1,97 @@
+{
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "query": {
+      "type": "string"
+    },
+    "config": {
+      "properties": {
+        "endpoint": {
+          "type": "string"
+        },
+        "form": {
+          "elements": {
+            "properties": {
+              "element": {
+                "type": "string"
+              },
+              "param": {
+                "discriminator": "from",
+                "mapping": {
+                  "list": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "keywords": {
+                        "elements": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "optionalProperties": {
+                      "attributes": {
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "dict": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "keywords": {
+                        "values": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "optionalProperties": {
+                      "attributes": {
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "topics": {
+          "elements": {
+            "type": "string"
+          }
+        },
+        "published": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

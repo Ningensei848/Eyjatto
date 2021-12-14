@@ -1,0 +1,21 @@
+{
+  "json.maxItemsComputed": 10000,
+  "files.autoSave": "afterDelay",
+  "files.watcherExclude": {
+    "**/.next/**": true,
+    "**/.yarn/**": true,
+    "**/out/**": true
+  },
+  "editor.lineNumbers": "on",
+  "editor.rulers": [80, 100],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": false,
+  "eslint.packageManager": "yarn",
+  "files.exclude": {
+    "**/.yarn": true
+  }
+}
