@@ -29,7 +29,7 @@ jobs:
       - name: Build Next.js app
         run: yarn build
         env:
-          BASE_PATH: SPARQListNext
+          BASE_PATH: ${{ secrets.BASE_PATH }}
           NEXT_PUBLIC_PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ secrets.GOOGLE_TAG_MANAGER_ID }}
           NEXT_PUBLIC_GOOGLE_ADSENSE_ID: ${{ secrets.GOOGLE_ADSENSE_ID }}
