@@ -7,7 +7,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 
 // cf. https://nextjs.org/docs/basic-features/built-in-css-support#import-styles-from-node_modules
 import 'github-markdown-css'
-import 'styles/scrollbar.css'
+import 'styles/global.css'
 
 import { siteName, swrOptions } from 'consts'
 import { theme, createEmotionCache } from 'styles/theme'

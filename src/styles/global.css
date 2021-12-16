@@ -1,0 +1,15 @@
+html {
+  font-size: 16px;
+  background: #fff;
+  font-feature-settings: 'palt', 'kern';
+  color: #1f1f1f;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+body {
+  /* -------------------- for scrollbar -------------------- */
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  /* ------------------------------------------------------- */
+}
